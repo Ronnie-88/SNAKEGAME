@@ -22,7 +22,16 @@ private:
 		{
 			vCurrentPos = currpos;
 		}
+		SnakeSegment(const SnakeSegment& snakeSeg)
+			:vLastPos(snakeSeg.vLastPos), vCurrentPos(snakeSeg.vCurrentPos)
+		{
+			std::cout << "Copied"<< std::endl;
+		}
+		
 	};
+	
+
+	
 
 	int* GridArray;
 	std::vector<SnakeSegment> SnakeBody;
@@ -44,6 +53,7 @@ private:
 
 
 public:
+
 	GridGame()
 	{
 		sAppName = "GridGame";
@@ -108,8 +118,8 @@ public:
 		}
 		CurrentScore = 0;
 		snakeHead = new SnakeSegment({ 12,15 });
-		SnakeBody.emplace_back(SnakeSegment({ 11,15 }));
-		SnakeBody.emplace_back(SnakeSegment({ 10,15 }));
+		SnakeBody.emplace_back(olc::vi2d{ 11,15 });
+		SnakeBody.emplace_back(olc::vi2d{ 10,15 });
 		cFoodColour = olc::YELLOW;
 		vFoodPos = { 18,8 };
 		ChangeDirection({ 1,0 });
@@ -158,7 +168,7 @@ public:
 	{
 		const SnakeSegment lastSegment = SnakeBody[SnakeBody.size() - 1];
 		const olc::vi2d vNextSegmentPos = (lastSegment.vLastPos * vBlockSize) - (vBlockSize * vSnakeHeadDir);
-		SnakeBody.emplace_back(SnakeSegment(vNextSegmentPos));
+		SnakeBody.emplace_back(vNextSegmentPos);
 	}
 	void MoveSnakeSegments()
 	{
@@ -297,6 +307,8 @@ public:
 	}
 
 };
+
+
 
 int main()
 {
