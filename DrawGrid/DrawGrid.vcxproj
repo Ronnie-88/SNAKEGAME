@@ -141,9 +141,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeSegment.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainSource.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeSegment.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="tut_tile.png" />
