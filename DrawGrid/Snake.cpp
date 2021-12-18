@@ -2,7 +2,7 @@
 
 Snake::Snake()
 {
-	SnakeBody = new std::vector<SnakeSegment>();
+	//SnakeBody = new std::vector<SnakeSegment>();
 	ResetSnake();
 }
 
@@ -23,7 +23,7 @@ void Snake::ResetSnake()
 
 void Snake::DrawSnakeSegments(olc::PixelGameEngine* gameInstance, const olc::vi2d& vBlockSize)
 {
-	const std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
+	//const std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	for (unsigned int i = 0; i < snakeBodyRef.size(); i++)
 	{
 		if (i == 0)//the head must drawn differently
@@ -45,7 +45,7 @@ bool Snake::DetectContact(const olc::vi2d& point1, const olc::vi2d& point2, cons
 
 void Snake::DetectSelfContact(bool& isGameOver, const olc::vi2d& vBlockSize)
 {
-	const std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
+	//const std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	for (int i = 0; i < snakeBodyRef.size(); i++)
 	{
 		if (i==0)//the head should not detect itself
@@ -68,7 +68,7 @@ void Snake::AddSnakeSegment(const olc::vi2d& vBlockSize)
 
 void Snake::MoveSnakeSegments()
 {
-	std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
+	//std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	for (int i = 0; i < snakeBodyRef.size(); i++)
 	{
 		if (i==0)//the head only needs to change it's lastpos
@@ -125,7 +125,7 @@ void Snake::SetPossibleDirection()
 
 SnakeSegment& Snake::GetSnakeHead()
 {
-	std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
+	//std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	return snakeBodyRef[0];
 }
 
@@ -136,7 +136,7 @@ int Snake::GetCurrentSnakeSize()
 
 SnakeSegment& Snake::GetCurrentSnakeTail()
 {
-	std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
+	//std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	return snakeBodyRef[SnakeBody->size()-1];
 }
 

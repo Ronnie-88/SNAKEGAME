@@ -25,7 +25,8 @@ public:
 
 
 private:
-	std::vector<SnakeSegment>* SnakeBody;
+	std::vector<SnakeSegment>* SnakeBody = new std::vector<SnakeSegment>();
+	std::vector<SnakeSegment>& snakeBodyRef = *SnakeBody;
 	olc::vi2d vSnakeHeadDir;
 	olc::vi2d RightDir;
 	olc::vi2d LeftDir;
