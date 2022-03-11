@@ -8,4 +8,5 @@ SnakeSegment::SnakeSegment(const olc::vi2d& currpos)
 SnakeSegment::SnakeSegment(const SnakeSegment& snakeSeg)
 	:vLastPos(snakeSeg.vLastPos), vCurrentPos(snakeSeg.vCurrentPos)
 {
+	std::cout << "Copied" << std::endl;
 }
