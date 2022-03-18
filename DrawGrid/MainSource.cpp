@@ -29,7 +29,7 @@ public:
 
 	GridGame()
 	{
-		sAppName = "GridGame";
+		sAppName = "SnakeGame";
 	}
 	~GridGame()
 	{
